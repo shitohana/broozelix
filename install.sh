@@ -193,7 +193,7 @@ for file in "$INSTALL_PATH/zellij/layouts/"*.{sh,kdl}; do
     [[ -f "$file" ]] || continue
     sed "s|\$TEMPLATE|$INSTALL_PATH|g" "$file" > "$file.tmp" && mv "$file.tmp" "$file"
 done
-sed "s|\$TEMPLATE|$INSTALL_PATH|g" "run.sh" > "run.sh.tmp" && mv "run.sh.tmp" "run.sh"
+sed "s|\$TEMPLATE|$INSTALL_PATH|g" "$(realpath $INSTALL_PATH)/run.sh" > "$(realpath $INSTALL_PATH)/run.sh.tmp" && mv "$(realpath $INSTALL_PATH)/run.sh.tmp" "$(realpath $INSTALL_PATH)/run.sh"
 
 chmod +x run.sh
 chmod +x zellij/layouts/broot-loop.sh
