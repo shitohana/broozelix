@@ -26,10 +26,6 @@
 
 ---
 
-Here's an updated `README.md` section to include the new installation method using the installation script via GitHub Releases. This assumes the script is hosted as `install.sh` in the GitHub releases section.
-
----
-
 ## 🛠 Installation
 
 You can install **broozelix** with a single command using the provided installation script. No need to clone the repository manually.
