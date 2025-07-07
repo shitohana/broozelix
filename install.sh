@@ -4,6 +4,19 @@ set -e
 
 BROOZELIX_REPO="https://github.com/shitohana/broozelix.git"
 
+colorize() {
+    local color=$1
+    local text=$2
+    case $color in
+    red) code="31" ;;
+    green) code="32" ;;
+    yellow) code="33" ;;
+    blue) code="34" ;;
+    *) code="0" ;;
+    esac
+    echo -e "\033[${code}m${text}\033[0m"
+}
+
 # Parse params
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -16,7 +29,7 @@ while [[ $# -gt 0 ]]; do
         shift 2
         ;;
     -h | --help)
-        echo "Install broozelix"
+        echo "Install $(colorize blue broozelix)"
         echo "Broozelix is a zellij layout config with a patched helix"
         echo "build with possibility to send commands via UNIX socket."
         echo
@@ -42,32 +55,20 @@ while [[ $# -gt 0 ]]; do
 done
 
 INSTALL_PATH="${INSTALL_PATH:-${XDG_CONFIG_HOME:-$HOME/.config}/broozelix}"
-INSTALL_PATH="$(realpath $INSTALL_PATH)"
 mkdir -p "$INSTALL_PATH"
+INSTALL_PATH="$(realpath $INSTALL_PATH)"
 cd "$INSTALL_PATH"
 
 clone_broozelix() {
     if [[ ! -d "$INSTALL_PATH/.git" ]]; then
         echo "Cloning broozelix repository"
-        git clone "$BROOZELIX_REPO" "$INSTALL_PATH"
+        git clone --recurse-submodules "$BROOZELIX_REPO" "$INSTALL_PATH"
     else
         echo "Helix repository already exists at path. Skipping"
     fi
+    git pull
 }
 clone_broozelix
-
-colorize() {
-    local color=$1
-    local text=$2
-    case $color in
-    red) code="31" ;;
-    green) code="32" ;;
-    yellow) code="33" ;;
-    blue) code="34" ;;
-    *) code="0" ;;
-    esac
-    echo -e "\033[${code}m${text}\033[0m"
-}
 
 prompt_execute() {
     local prompt="$1"

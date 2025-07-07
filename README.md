@@ -1,6 +1,8 @@
 # Broozelix
 
-**Broozelix** is a minimal yet powerful terminal workspace combining [Helix](https://helix-editor.com/), [Broot](https://github.com/Canop/broot), [bat](https://github.com/sharkdp/bat), and [Zellij](https://zellij.dev) to deliver a fast, keyboard-driven developer experience inspired by **[Yazelix](https://github.com/helix-editor/helix/discussions/2217)**.
+![Demo](https://private-user-images.githubusercontent.com/43905117/463053571-9e552748-d371-4c82-b3d2-8d248c4e6cd5.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTE4Njg5NTUsIm5iZiI6MTc1MTg2ODY1NSwicGF0aCI6Ii80MzkwNTExNy80NjMwNTM1NzEtOWU1NTI3NDgtZDM3MS00YzgyLWIzZDItOGQyNDhjNGU2Y2Q1LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTA3MDclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwNzA3VDA2MTA1NVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWJhM2E2MDBmZDMwYjQyMzAxZmRjMzYzMTdmYzc1MWE5NjM4NjMzNTUxYmViMTdlODQ3MWVmNDk1ZDhhZGNkMTEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.B5KHOzbA154K9xZm7ZpO_WD_cbsm_9_3GRN7goEpVRk)
+
+**Broozelix** is a minimal yet powerful terminal workspace combining [Helix](https://helix-editor.com/), [Broot](https://github.com/Canop/broot), [bat](https://github.com/sharkdp/bat), and [Zellij](https://zellij.dev) to deliver a fast, keyboard-driven developer experience inspired by **[Yazelix](https://github.com/luccahuguet/yazelix)**.
 
 > **Why Broozelix?**
 > Because Helix doesn't yet have a stable or fully-fledged plugin ecosystem, Broozelix builds a robust integration between tools **outside the editor**, using Unix sockets and Zellij as the glue.
@@ -28,7 +30,7 @@
 
 ## 🛠 Installation
 
-You can install **broozelix** with a single command using the provided installation script. No need to clone the repository manually.
+You can install **broozelix** with a single command using the provided installation script. **No need to clone the repository manually**.
 
 ### ✅ Prerequisites
 
@@ -101,7 +103,6 @@ The script supports the following flags:
 
 | Component           | Path                    |
 | ------------------- | ----------------------- |
-| Ansible Setup       | `ansible/install.yml`   |
 | Custom Broot Config | `broot/broozelix.hjson` |
 | Zellij Layouts      | `zellij/layouts/`       |
 | Zellij Keybinds     | `zellij/config.kdl`     |
@@ -110,27 +111,22 @@ The script supports the following flags:
 
 ## 🧪 Usage
 
-After setup:
-
-1. Run Zellij with the `broozelix` layout:
-
-   ```bash
-   zellij -l $XDG_CONFIG_HOME/zellij/layouts/broozelix.kdl
-   ```
-  
-2. Navigate files with Broot (left pane).
-3. Open/edit them in Helix (right pane) via `enter` or `create {file}`.
-4. Preview files with `F3` using `bat`.
+* Open/edit them in Helix (right pane) via `enter` or `create {file}`.
+* Preview files with `F3` using `bat`.
+* Open floating terminal with `Ctrl + \`
 
 ---
 
-## 🧪 Requirements
+## Developmrnt roadmap
 
-* Rust toolchain
-* Git
+- [x] Openning and closing files in `helix` from `broot`
+- [ ] Openning floating terminal ('Ctrl + ')
+- [ ] Syncing active helix file in `broot`
+- [ ] Single theme selector script
+- [ ] More tool windows (like tasks runner)
 
 ---
 
 ## 📜 License
 
-MIT License © 2025
+MIT License, shitohana, 2025
