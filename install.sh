@@ -2,7 +2,7 @@
 
 set -e
 
-BROOZELIX_REPO=""
+BROOZELIX_REPO="https://github.com/shitohana/broozelix.git"
 
 # Parse params
 while [[ $# -gt 0 ]]; do

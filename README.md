@@ -60,14 +60,15 @@ curl -sSfL https://github.com/shitohana/broozelix/releases/latest/download/insta
 Or with arguments
 
 ```bash
-curl -sSfL https://github.com/<your-org-or-user>/broozelix/releases/latest/download/install.sh | bash -s -- -y -p ~/.config/custom-broozelix
+curl -sSfL https://github.com/shitohana/broozelix/releases/latest/download/install.sh | bash -s -- -y -p ~/.config/custom-broozelix
 ```
 
 If you've previously installed Broozelix, the script will detect it and ask whether to reinstall Helix.
 
 After installation:
-- Your original Zellij config will be symlinked into Broozelix.
-- A marker file (~/.config/helix/broozelix) will be used to track Broozelix-specific Helix installation.
+
+* Your original Zellij config will be symlinked into Broozelix.
+* A marker file (~/.config/helix/broozelix) will be used to track Broozelix-specific Helix installation.
 
 Add this alias to your shell config (e.g. .bashrc, .zshrc):
 
@@ -120,6 +121,7 @@ After setup:
    ```bash
    zellij -l $XDG_CONFIG_HOME/zellij/layouts/broozelix.kdl
    ```
+  
 2. Navigate files with Broot (left pane).
 3. Open/edit them in Helix (right pane) via `enter` or `create {file}`.
 4. Preview files with `F3` using `bat`.
