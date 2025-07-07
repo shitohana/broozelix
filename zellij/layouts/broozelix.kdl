@@ -1,0 +1,22 @@
+layout {
+  pane split_direction="vertical" {
+    pane {
+      borderless true
+      command "$TEMPLATE/broozelix/zellij/layouts/broot-loop.sh"
+      focus true
+      name "broot"
+      size "20%"
+    }
+
+    pane {
+      borderless true
+      name "helix"
+      command "$TEMPLATE/broozelix/zellij/layouts/helix-loop.sh"
+      }
+    }
+    pane {
+      borderless true
+      plugin location="zellij:status-bar"
+      size 1
+    }
+}

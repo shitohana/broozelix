@@ -1,0 +1,44 @@
+show_selection_mark: true
+icon_theme: nerdfont
+
+verbs: [
+     {
+         key: ctrl-k
+         execution: ":line_up"
+     }
+     {
+         key: ctrl-j
+         execution: ":line_down"
+     }
+     {
+         key: ctrl-u
+         execution: ":page_up"
+     }
+     {
+         key: ctrl-d
+         execution: ":page_down"
+     }
+    {
+        name: touch
+        invocation: touch {new_file}
+        execution: "touch {directory}/{new_file}"
+        leave_broot: false
+    }
+    {
+        invocation: create {subpath}
+        execution: ["sh", "-c", "printf ':e {subpath}' | socat - UNIX-CONNECT:/tmp/helix.sock"]
+        leave_broot: false
+    }
+	{
+	    invocation: "open-in-helix"
+	    key: "enter"
+		apply_to: "text_file"
+		execution: ["sh", "-c", "printf ':e {file}' | socat - UNIX-CONNECT:/tmp/helix.sock"]
+		leave_broot: false
+  	}
+	{
+		key: "F3"
+		execution: ["sh" "-c" "zellij action new-pane -c -n {file-name} -f -- bat --style=numbers --color=always --paging=always {file}"]
+		leave_broot: false
+    }
+]
