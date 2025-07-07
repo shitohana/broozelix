@@ -54,7 +54,7 @@ clone_broozelix() {
         echo "Helix repository already exists at path. Skipping"
     fi
 }
-# clone_broozelix
+clone_broozelix
 
 colorize() {
     local color=$1
