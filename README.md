@@ -124,23 +124,6 @@ After setup:
 
 ---
 
-## 📁 Structure
-
-```txt
-broozelix
-├── ansible/                # Automated setup (Rust, Helix, Broot)
-├── broot/                  # Custom broot config
-├── zellij/                 # Layouts and Zellij config
-│   ├── config.kdl
-│   └── layouts/
-│       ├── broozelix.kdl
-│       ├── broot-loop.sh
-│       └── helix-loop.sh
-└── README.md
-```
-
----
-
 ## 🧪 Requirements
 
 * Rust toolchain
