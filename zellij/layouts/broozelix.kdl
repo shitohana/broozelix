@@ -2,7 +2,7 @@ layout {
   pane split_direction="vertical" {
     pane {
       borderless true
-      command "$TEMPLATE/broozelix/zellij/layouts/broot-loop.sh"
+      command "$TEMPLATE/zellij/layouts/broot-loop.sh"
       focus true
       name "broot"
       size "20%"
@@ -11,7 +11,7 @@ layout {
     pane {
       borderless true
       name "helix"
-      command "$TEMPLATE/broozelix/zellij/layouts/helix-loop.sh"
+      command "$TEMPLATE/zellij/layouts/helix-loop.sh"
       }
     }
     pane {

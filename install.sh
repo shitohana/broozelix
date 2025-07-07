@@ -191,8 +191,9 @@ echo "  alias broozelix=\"$(realpath $INSTALL_PATH)/run.sh\""
 
 for file in "$INSTALL_PATH/zellij/layouts/"*.{sh,kdl}; do
     [[ -f "$file" ]] || continue
-    sed "s|\$XDG_CONFIG_HOME|$INSTALL_PATH|g" "$file" > "$file.tmp" && mv "$file.tmp" "$file"
+    sed "s|\$TEMPLATE|$INSTALL_PATH|g" "$file" > "$file.tmp" && mv "$file.tmp" "$file"
 done
+sed "s|\$TEMPLATE|$INSTALL_PATH|g" "run.sh" > "run.sh.tmp" && mv "run.sh.tmp" "run.sh"
 
 chmod +x run.sh
 chmod +x zellij/layouts/broot-loop.sh

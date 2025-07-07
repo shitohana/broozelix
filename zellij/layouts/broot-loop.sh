@@ -1,7 +1,7 @@
 #!/bin/bash
 fail_count=0
 while true; do
-  broot -gIhtSD --sort-by-type --max-depth 2 --conf "$TEMPLATE/broozelix/broot/broozelix.hjson;$XDG_CONFIG_HOME/broot/conf.hjson"
+  broot -gIhtSD --sort-by-type --max-depth 2 --conf "$TEMPLATE/broot/broozelix.hjson;$XDG_CONFIG_HOME/broot/conf.hjson"
 
   if [ $? -ne 0 ]; then
     echo "Command failed. Retrying..." >&2
